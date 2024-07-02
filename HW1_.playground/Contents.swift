@@ -3,6 +3,9 @@ protocol Power {
     var brand: String { get }
 }
 
+// протоколы, это хорошо, но проперти brand уже есть в классе Car, так что это излишне
+
+
 class Car {
     var brand: String
     var model: String
@@ -83,6 +86,10 @@ class Chrysler: Car, Power {
     }
 }
 
+/*
+ Все машины имеют одинаковые поля, это нарушает правило дублирования кода, можно было бы тут также создать отдельный класс, типа CarDop, который бы наследовался от Car, а все марки уже наследовать от CarDop и был бы у тебя там 1 метод init, который бы вызывал super.init
+ */
+
 func createCar() -> [Car & Power] {
     let cars: [Car & Power] = [
         Renault(numOfDoors: 5, power: 97, brand: "Renault", model: "Logan", color: "white"),
@@ -92,6 +99,12 @@ func createCar() -> [Car & Power] {
     ]
     return cars
 }
+
+/*
+  Есть ощущение, что в задании просили написать метод, который бы по введённым параметрам от пользователя/от тебя создавал бы машины.
+  То есть не нужно было создавать массив машин, в этом случае ты можешь воспользоваться методом единожды, если ты захочешь добавить ещё автомобили, то тебе прийдётся менять сам метод, это не эффективно
+  Тут самым лучшим вариантом было бы создать структуру, в ней был бы массив машин и метод мутационный, который бы добавлял по параметрам новую машину
+ */
 
 func race(firstCar: Power, secondCar: Power) -> Power {
     if firstCar.power > secondCar.power {
@@ -130,6 +143,10 @@ func bigRace(cars: [Car & Power]) {
 }
 
 bigRace(cars: cars)
+
+// последние методы мне нравятся, молодец!)
+
+
 //let car = Car(brand: "BMW", model: "I8", color: "pink")
 //let renault = Renault(numOfDoors: 5, power: 200, brand: "Renault", model: "Logan" , color: "white")
 //renault.info()
