@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "1671108158_grizly-club-p-kot-bez-fona-png-1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "00059000.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
