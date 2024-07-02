@@ -11,8 +11,8 @@ import UIKit
 var users = [(username: "liza", password: "n", age: "19", fav: "horse"), (username: "minion", password: "bob", age: "230", fav: "bear")]
 
 class FirstViewController: UIViewController {
-    let usernames: String = "liza"
-    let passwords: String = "n"
+    //let usernames: String = "liza"
+    //let passwords: String = "n"
 
     
     @IBOutlet weak var instruction: UILabel!
@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
             var userFav: String?
 
             for user in users {
-                if username.text == user.username && password.text == (user as AnyObject).password {
+                if username.text == user.username && password.text == user.password {
                     isAuthenticated = true
                     userAge = user.age
                     userFav = user.fav
