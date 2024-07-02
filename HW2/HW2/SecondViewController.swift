@@ -9,7 +9,15 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var age_title: UILabel!
+    @IBOutlet weak var age_value: UILabel!
+    
+    @IBOutlet weak var fav_title: UILabel!
+    @IBOutlet weak var fav_value: UILabel!
+    
     @IBOutlet private weak var Usernames: UILabel!
+    @IBOutlet weak var cat: UIImageView!
+    @IBOutlet weak var kitty: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +27,10 @@ class SecondViewController: UIViewController {
     func setup(usernames: String) {
         Usernames.text = usernames
     }
-    
+    func data(ages: String, favs: String) {
+        age_value.text = ages
+        fav_value.text = favs
+    }
 
     /*
     // MARK: - Navigation
